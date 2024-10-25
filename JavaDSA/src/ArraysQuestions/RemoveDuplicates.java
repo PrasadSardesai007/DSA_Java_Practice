@@ -1,10 +1,12 @@
 package ArraysQuestions;
 
+import java.util.Arrays;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class RemoveDuplicates {
-	
+
 	/**
 	 * 
 	 * 
@@ -18,19 +20,30 @@ public class RemoveDuplicates {
 	public static void main(String[] args) {
 
 		int[] arr = { 1, 2, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9 };
-		System.out.println(removeDuplicates(arr));
+		System.out.println(Arrays.toString(removeDuplicates(arr)));
 
 	}
 
-	public static Set<Integer> removeDuplicates(int[] arr) {
-		Set<Integer> set = new HashSet<Integer>();
+	public static int[] removeDuplicates(int[] arr) {
+
+		Set<Integer> set = new LinkedHashSet<Integer>();
 
 		for (int num : arr) {
+
 			set.add(num);
 
 		}
 
-		return set;
+		int[] ans = new int[set.size()];
+
+		int index = 0;
+		for (int num : set) {
+			ans[index] = num;
+			index++;
+
+		}
+
+		return ans;
 	}
 
 }

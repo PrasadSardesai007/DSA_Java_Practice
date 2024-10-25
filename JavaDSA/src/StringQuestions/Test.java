@@ -1,74 +1,29 @@
+
 package StringQuestions;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class Test {
 
+	/**
+	 * 
+	 * 
+	 * find minimum number from rotated sorted array
+	 * 
+	 * 
+	 * 
+	 */
+
 	public static void main(String[] args) {
 
-		int[] arr = { 1, 2, 3, 4, 6, 8, 9, 3, 2 };
-		int target = 3;
-		System.out.println(findMinimumIndex(arr, target));
-
-	}
-
-	public static int findMinimumIndex(int[] arr, int target) {
-
-		int peak = findPeak(arr); // 3
-
-		int valueIndex = binarySearch(arr, target, 0, peak);
-
-		if (valueIndex != -1) {
-
-			return valueIndex;
-		}
-
-		return binarySearch(arr, target, peak + 1, arr.length - 1);
-
-	}
-
-	public static int binarySearch(int[] arr, int target, int start, int end) {
-
-		while (start <= end) {
-			int mid = start + (end - start) / 2;
-
-			if (target > arr[mid]) {
-				start = mid + 1;
-
-			} else if (target < arr[mid]) {
-				end = mid - 1;
-			} else {
-
-				return mid;
-			}
-
-		}
-
-		return -1;
-	}
-
-	public static int findPeak(int[] arr) {
-
-		int start = 0;
-		int end = arr.length - 1;
-
-		while (start <= end) {
-
-			int mid = start + (end - start) / 2;
-
-			if (mid > 0 && arr[mid] < arr[mid - 1]) {
-				end = mid - 1;
-			} else if (mid < arr.length - 1 && arr[mid] < arr[mid + 1]) {
-				start = mid + 1;
-			} else {
-
-				return mid;
-			}
-
-		}
-		return -1;
+		int[] arr1 = { 1, 3, 6, 7, 2, 7, 23, 2, 3, 9, 3, 12, 23, 19 };
+		
 
 	}
 }
